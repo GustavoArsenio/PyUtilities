@@ -1,0 +1,1 @@
+$start="2024-12-27"; $end="2025-01-07"; $prefix="my_file_*"; $suffix=".txt"; $dir="C:\Python\TCC"; For ($date = [datetime]::Parse($start); $date -le [datetime]::Parse($end); $date = $date.AddDays(1)) { $fileName = "$prefix$($date.ToString('yyyyMMdd'))$suffix"; $filePath = Join-Path $dir $fileName; if (Test-Path $filePath) { dir $filePath } }
